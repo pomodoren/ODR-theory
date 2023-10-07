@@ -1,0 +1,25 @@
+,mean_fit_time,std_fit_time,mean_score_time,std_score_time,param_balance,param_balance_2,param_classifier,param_feature_selection_all,param_to_dense,param_transformer__categorical__encoding,param_transformer__categorical__feature_selection,param_transformer__categorical__imputation,param_transformer__numerical__feature_selection,param_transformer__numerical__imputation,param_transformer__numerical__scaling,params,split0_test_score,split1_test_score,split2_test_score,split3_test_score,mean_test_score,std_test_score,rank_test_score
+0,0.06772327423095703,0.013642957922504202,0.0,0.0,passthrough,passthrough,RandomForestClassifier(random_state=0),passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,"{'balance': 'passthrough', 'balance_2': 'passthrough', 'classifier': RandomForestClassifier(random_state=0), 'feature_selection_all': 'passthrough', 'to_dense': 'passthrough', 'transformer__categorical__encoding': 'passthrough', 'transformer__categorical__feature_selection': 'passthrough', 'transformer__categorical__imputation': 'passthrough', 'transformer__numerical__feature_selection': 'passthrough', 'transformer__numerical__imputation': 'passthrough', 'transformer__numerical__scaling': 'passthrough'}",,,,,,,2
+1,10.970249354839325,0.44884120932268456,0.3328583240509033,0.05492330332941603,passthrough,passthrough,LGBMClassifier(random_state=0),passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,"{'balance': 'passthrough', 'balance_2': 'passthrough', 'classifier': LGBMClassifier(random_state=0), 'feature_selection_all': 'passthrough', 'to_dense': 'passthrough', 'transformer__categorical__encoding': 'passthrough', 'transformer__categorical__feature_selection': 'passthrough', 'transformer__categorical__imputation': 'passthrough', 'transformer__numerical__feature_selection': 'passthrough', 'transformer__numerical__imputation': 'passthrough', 'transformer__numerical__scaling': 'passthrough'}",0.7014784523435043,0.7216105693614344,0.7029578351164254,0.697608558842039,0.7059138539158508,0.009270593782132252,1
+2,0.04841428995132446,0.0035598112471821523,0.0,0.0,passthrough,passthrough,DecisionTreeClassifier(random_state=0),passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,"{'balance': 'passthrough', 'balance_2': 'passthrough', 'classifier': DecisionTreeClassifier(random_state=0), 'feature_selection_all': 'passthrough', 'to_dense': 'passthrough', 'transformer__categorical__encoding': 'passthrough', 'transformer__categorical__feature_selection': 'passthrough', 'transformer__categorical__imputation': 'passthrough', 'transformer__numerical__feature_selection': 'passthrough', 'transformer__numerical__imputation': 'passthrough', 'transformer__numerical__scaling': 'passthrough'}",,,,,,,3
+3,0.047967374324798584,0.002641707972623211,0.0,0.0,passthrough,passthrough,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=100, n_jobs=None, num_parallel_tree=None,
+              predictor=None, random_state=0, ...)",passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,passthrough,"{'balance': 'passthrough', 'balance_2': 'passthrough', 'classifier': XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=100, n_jobs=None, num_parallel_tree=None,
+              predictor=None, random_state=0, ...), 'feature_selection_all': 'passthrough', 'to_dense': 'passthrough', 'transformer__categorical__encoding': 'passthrough', 'transformer__categorical__feature_selection': 'passthrough', 'transformer__categorical__imputation': 'passthrough', 'transformer__numerical__feature_selection': 'passthrough', 'transformer__numerical__imputation': 'passthrough', 'transformer__numerical__scaling': 'passthrough'}",,,,,,,4

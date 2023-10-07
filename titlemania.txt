@@ -1,0 +1,18 @@
+[TITLE MANIA]
+
+- Why elderly should go to school too
+[Cognitive reserve in Dementia Implications for Cognitive Training.]
+
+- Cognitive Reserve Drivers (CRDs)
+- Neuro-Cognitive Reserve of Drivers (NeRoD) - hahahahahha this is so random
+[Measuring the nature of self-organization of the cognitive brain.]
+
+- Critical protective cognitive and neurological features for people who are going through dementia. (CCN-Protect)
+
+- Explainable AI criteria comparison with clinical criteria for the diagnosis of Dementia
+
+- Testing stability of clinical criteria using counterfactual explanations for Dementia
+
+- Revising the clinical criteria for Dementia using explainable machine learning and counterfactuals
+
+- DEMENTUM: Exploring DEgeneration moMENTUM through counterfactual examples
