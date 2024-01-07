@@ -104,3 +104,5 @@ header-includes:
 Table: ADNI files.
 
 \normalsize
+
+\newpage

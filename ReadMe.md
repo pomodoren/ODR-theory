@@ -1,31 +1,68 @@
-## Thesis work
+# Open Dementia Reports (ODR) - theory
 
-- You are not Proust
-- You are not e.e.cummings.
-- Begin new paragraphs often.
-- Write everything that comes to your head.
-- Use the advisor as a guinea pig.
-- Do not insist on beginning with the first chapter.
-- Do not use ellipsis or exclamation points, and do not explain ironies.
-- Always define a term when you introduce it for the first time.
-
-> Umberto Eco
+This is my master's thesis where I delve in depth in the psycho and bio markers of Dementia, checking whether different types of Dementia can be diagnosed using Machine Learning. Then on top of these, I add some explainability using the Shapley method for Machine Learning. This, in principle, is a good starting ground for standardizing the Dementia Reporting for different patients, and can later become a valuable tool for clinicians. 
 
 
-Methodology of Reporting:
-[Cochrane!](https://methods.cochrane.org/sites/methods.cochrane.org.prognosis/files/uploads/Moons%20(Ann%20Intern%20Med%202015).pdf)
+- [Thesis](results/Thesis.pdf)
+- [Thesis, Chapter 2 - Theory](results/Chapter2.pdf)
+- [Thesis, Chapter 3 - Methodology](results/Chapter3.pdf)
+- [Thesis, Chapter 4 - Results](results/Chapter4.pdf)
+- [Thesis, Appendix (mainly on preprocessing)](results/Appendix.pdf)
+- [Notes](notes.md)
 
 
-### Biblio stuff
-- https://www.bibtex.com/c/doi-to-bibtex-converter/ (from doi)
-- https://www.doi2bib.org/bib/10.1093/cercor/bhj036 (from doi)
-- https://flamingtempura.github.io/bibtex-tidy/ (tidy)
-- https://text2bib.economics.utoronto.ca/index.php/index (from text)
-- https://anystyle.io/ (from text)
 
-- Account: https://www.mendeley.com/reference-manager/library/all-references
+> Note: This is previous to last version, and for some reason I dont have the last version. So, some references are missing. Keep your history folks.  
+> Note: the following are not updated
 
-- APA: https://tex.stackexchange.com/questions/211925/transform-markdown-to-pdf-with-apa-style-and-bibtex-support
-- https://www.zotero.org/styles
+## Processing Units
 
-- Tables issues: https://tex.stackexchange.com/questions/4152/how-do-i-prevent-widow-orphan-lines
+| Subprocess        | Possible options                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| _Imbalance_       |                                                                                       |
+| Over-sampling     | No over-sampler, `RandomOverSampler()`, `SMOTENC()`                                   |
+| Under-sampling    | No under-sampler, `CustomHandler()`, `RandomUnderSampler()`, `NearMiss()`             |
+| _categorical_     |                                                                                       |
+| Missing data      | No imputation, `SimpleImputer(*)`                                                     |
+| Transforming data | No encoding, `OneHotEncoding()`                                                       |
+| Feature selection | No selection, `SelectPercentile(Chi2)`, `SelectFromModel(*)`                          |
+| _numerical_       |                                                                                       |
+| Missing data      | No imputation, `SimpleImputer(*)`, `KNNImputer()`, `IterativeImputer(*)`              |
+| Transforming data | No scaling, `StandardScaler()`, `RobustScaler()`                                      |
+| Feature selection | No selection, `VarianceThreshold`, `SelectPercentile(Pearson)` , `SelectFromModel(*)` |
+| _method_          |                                                                                       |
+| Classifier        | `RandomForest()`, `XGBoost()`, `LightGBM()`, `HistGradientBoostingClassifier()`       |
+| Cross-Validation  | `GridSearchCV(scorer='f1_micro', cv=StratifiedGroupKFold)`                            |
+
+<b>Table</b>: Transformers and Estimators used in the pipelines.
+
+| Possible Pipeline                             | Sample selected Pipeline for ADNI       |
+| --------------------------------------------- | --------------------------------------- |
+| ![Vanilla Pipeline](docs/VanillaPipeline.png) | ![Selected Best](docs/SelectedBest.png) |
+
+> Note: In case you are using RandomForest, need to use a specific combination of preprocessing steps. To be updated.
+
+
+## Results
+
+### Best predictors for each class
+
+For each class, the importance of the features are averaged, and then shared with the docs.
+
+| Main predictors for big classes       | Main predictors for smaller classes   |
+| ------------------------------------- | ------------------------------------- |
+| (a) Healthy Controls                  | (b) Fronto-Temporal Lobe Degeneration |
+| ![Healthy Controls](docs/nacc-HC.png) | ![FTLD.](docs/nacc-FTLD.png)          |
+| (c) Alzheimer's Disease               | (d) Dementia with Movement Disorders  |
+| ![AD.](docs/nacc-AD.png)              | ![DwMD.](docs/nacc-DwMD.png)          |
+
+### Single case for each class
+
+The following are the importance of predictors for a single case. As you can see, its different from the predictors mentioned above, as the ones above are averaged among all the cases for a single class.
+
+| Single case                           | Single case                           |
+| ------------------------------------- | ------------------------------------- |
+| (a) Healthy Control                   | (b) Fronto-Temporal Lobe Degeneration |
+| ![Healthy Controls](docs/case-HC.png) | ![FTLD.](docs/case-FTLD.png)          |
+| (c) Alzheimer's Disease               | (d) Dementia with Movement Disorders  |
+| ![AD.](docs/case-AD.png)              | ![DwMD.](docs/case-DwMD.png)          |
